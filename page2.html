@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="./css/page2.css">
+</head>
+<style>
+    /* 마우스 움직임 */
+    .target {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border: 1px solid rgba(255, 145, 145, 1);
+        border-radius: 50%;
+        z-index: 1000; 
+        pointer-events: none;
+    }
+    .target::before {
+        content: "";
+        position: absolute;
+        width: 26px;
+        height: 26px;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        border: 2px solid rgba(255, 145, 145, 1);
+        border-radius: 50%;
+    }
+    .tag {
+        color: rgb(224, 93, 93);
+        position: absolute;
+        font-size: 30px;
+        margin: 20px;
+    }
+</style>
+<body>
+    <div class="target"></div>
+    <span class="tag">hello</span>
+
+    <div class="wrap">
+        <!-- 헤더 -->
+        <div class="header">
+            <div class="logo"><a href="index.html">Lee Se Yoon</a></div>
+            <div class="menu">
+                <ul id="pc_menu">
+                    <li><a href="page3.html">About me</a></li>
+                    <li><a href="page.html">Portfolio</a></li>
+                    <li><a href="page2.html">Contact</a></li>
+                </ul>
+
+                <div class="mb_button">
+                    <button id="menuButton"></button>
+                    <div id="menumb" class="menumb">
+                        <button id="closeButton">X</button>
+
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="./page3.html">About Me</a></li>
+                            <li><a href="./page.html">Portfolio</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                    <script src="./js/scripts.js"></script>
+                </div>
+            </div>
+        </div>
+
+        <!-- 컨텐츠 -->
+        <div class="content">
+            <h1>C&nbsp;&nbsp; ntant</h1>
+            <div class="box">
+                <img src="img/rabbitw.png" height="50px" width="40px" alt="">
+                <input type="text" name="name" placeholder="Name *" class="name">
+                <input type="email" name="Address" placeholder="Email Address *" class="Emailaddress">
+                <input type="tel" name="number" placeholder="Phone Number" class="number">
+                <input type="text" name="reauest" placeholder="Write Your Request *" class="requset">
+            </div>
+            <input type="submit" class="submit" value="Submit">
+            <div class="sns">
+                <button class="instar snslogo"><a href="https://www.instagram.com/sy____oon/" target="_blank"><img src="img/rabbitw.png" alt=""><img src="./img/instar.png" width="40px" height="40px" alt=""></a></button>
+                <button class="behance snslogo"><img src="img/rabbitw.png" alt=""><img src="./img/face.png" width="55px" height="50px" alt=""></button>
+                <button class="blog snslogo"><img src="img/rabbitw.png" alt=""><img src="./img/blog.png" width="40px" height="40px" alt=""></button>
+            </div>
+            <p>ⓒ2024 by Seyoon Portfolio</p>
+        </div>
+    </div>
+
+    <!-- 마우스 움직임 -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script>
+        const aniDuration = 3;
+        gsap.to('.boxs', {duration: aniDuration, x: 300, y: 50, rotation: 360, ease: 'elastic.out(1,0.3)', yoyo: true, repeat: 2});
+
+        const target = document.querySelector('.target');
+        let mouseX = 0;
+        let mouseY = 0;
+
+        function updateTargetPosition() {
+            const scrollX = window.scrollX || document.documentElement.scrollLeft;
+            const scrollY = window.scrollY || document.documentElement.scrollTop;
+            target.style.transform = `translate(${mouseX + scrollX}px, ${mouseY + scrollY}px)`;
+        }
+
+        document.addEventListener('mousemove', function(e) {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+            updateTargetPosition();
+        });
+
+        window.addEventListener('scroll', function() {
+            updateTargetPosition();
+        });
+
+        window.addEventListener('load', function() {
+            updateTargetPosition();
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Flip.min.js"></script>
+    <script>
+        // 타이틀 페이드인
+        const fadeEls = document.querySelectorAll('.content');
+        gsap.from(fadeEls, {
+            transform: 'translateY(-3%)',
+            duration: 0.5,
+            opacity: 0,
+            stagger: 0.7
+        });
+    </script>
+</body>
+</html>

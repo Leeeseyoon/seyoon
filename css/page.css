@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap');
+*{margin: 0;padding: 0;}
+
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NEXON Lv2 Gothic';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv2 Gothic.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Ycomputer-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/Ycomputer-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+ul{list-style: none;}
+a{text-decoration-line:none;color: white;}
+body{overflow-x: hidden ; cursor: none;}
+.wrap{
+  width: 100%;
+  height: 100vh;}
+
+/* 헤더 */
+.header{
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%; 
+  height: 100px;  background-color: #fc8dad; 
+  display: flex;  align-items: center; }
+
+
+.menu{width: 70%;}
+.menu ul{color: white;color: white; }
+#pc_menu li{float: left; margin-left: 80px;  }
+.logo{ 
+  
+  width: 30%; margin-left: 21vw; display: flex;
+  align-items: center;
+  font-family: "DM Serif Text", serif; font-size: 40px; color: white;}
+
+.menu ul :hover{
+  color: #FF317B;
+}
+
+
+
+
+
+h1{font-size: 100px;font-weight:200 ; font-style: italic;}
+h1,h2{font-family: "DM Serif Text", serif; font-weight: 300;}
+h3{font-family: 'Pretendard-Regular';font-weight:300 ;}
+
+
+/* 컨텐츠 */
+
+#content{
+  width: 100%; height: 500vh;
+  background : linear-gradient(#BFEAFC, #208DF2);
+  display: flex; justify-content: center;text-align: center; }
+      /* 타이틀 크기 */
+.content1 .title { margin-top: 15%; z-index: 2;  position: relative;}
+.title{color:#0966be;}
+.title h3{font-size: 30px; font-family: 'NEXON Lv2 Gothic';}
+
+
+
+      /* 섹션 설정 */
+section h2{  
+  font-size: 64px; color: #006CCE; }
+section p{width: 8.5%; font-size: 20px; font-style: italic;
+  font-family: 'NEXON Lv2 Gothic';color:#EC1670;
+border-top: none; border-left: none; border-right: none; border-bottom: 1px solid #EC1670;}
+
+section{height: 100vh; margin-top: 16%; z-index: 2; position: relative;}
+
+        /* 자켓 */
+.work1 img:nth-of-type(2){margin: 0% 0% 18% 0%;}
+.work1 h2{width: 14%; position: absolute;top:-2%; left: 52%;}
+.work1 p{position: absolute; top: 3.5%; right: 0%;}
+
+.works img{filter: blur(4px)   grayscale(1);transition: 0.4s ease;  }
+.works img:hover{filter:  blur(0) grayscale(0);}
+
+
+
+
+
+
+
+
+        /* 오페라 립틴트 */
+        .work2 h2{width: 35%; position: absolute; top: 30%; right: -15%;
+          transform: rotate(90deg);}
+        .work2 p{position: absolute; top: 10%; right: 8%;}
+
+        /* 어뮤즈 */
+        .work3 img:nth-of-type(2){margin: 0% 0% 100% 0%;}
+        .work3 h2{width: 36%; position: absolute; top: 17%; left: -17%;transform: rotate(-90deg);}
+        .work3 p{position: absolute; top:6%; right: 6%;}
+
+
+
+
+/* 스와이퍼 */
+#content2{z-index: 99; position: relative; font-family: "Galmuri9", sans-serif;
+  display: block; justify-content: center;text-align: center;
+  width: 100%; height: 100vh; background-color: #171f5b;}
+
+.cat{position: relative ; top: 150px; }
+.detail {  color: white;font-family: "Galmuri9", sans-serif;
+margin-top: 150px; font-size: 50px;}
+
+.detail h4{font-family: 'Ycomputer-Regular'; font-weight: normal;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 중앙선 바 */
+#central-line {
+    position: fixed; z-index: 0;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 0; /* 초기 높이는 0으로 설정 */
+    background: rgba(255, 255, 255);
+    pointer-events: none;
+    transform: translateX(-50%);
+    transition: height 0.3s ease; /* 부드러운 트랜지션 효과 */
+}
+/*스크롤안하고있을때도 선이 유지될 수 있게 */
+
+
+
+
+
+
+
+/* 모바일 */
+.mb_button{display: none;}/* pc버전일땐 보이지않음 */
+
+@media screen and (max-width:991px){
+
+
+/* 헤더 */
+nav{font-size: 3rem; position: fixed;
+  height: 100px; z-index: 1000;;}
+
+.logo{font-size: 3vh;margin-left: 20px;width: 50%; height: 100px;}
+#pc_menu li{display: none;}
+.content h1{font-size: 20vw; margin-top: 70px;}
+
+/* 모바일 헤더 설정 */
+.mb_button{display: block;}
+#menuButton {z-index: 1000;}
+#menuButton{background-image: url(../img/bar.png); z-index: 99;
+width: 50px; height: 50px; margin-left: 40vw;}
+button{border: 0;
+background-color: transparent;}
+
+.menumb {
+z-index: 10;
+position: fixed;
+opacity: 0.9;
+top: 0;
+right: -300px;
+width: 250px;
+height: 100%;
+background-color: #ed7aaa;
+color: white;
+transition: right 0.3s ease;
+padding: 20px;
+box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+}
+.menumb.open {right: 0;}
+
+.menumb ul {list-style: none;
+      color: white;
+      padding: 0;
+      display: block;}
+
+.menumb li {margin: 35px 0;color: white;}
+
+.menumb a {color: white;text-decoration: none;}
+
+#closeButton {
+font-size: 20px;
+font-weight: bold;
+margin-top: 10px;
+color: white;
+border: none;
+cursor: pointer;
+padding: 10px 0;
+}
+
+/* 컨텐츠 */
+.content{width: 100%; height: 5500px;}
+  .content1{width: 100%; height: 200%;}
+  .content1 .title h3{ position: absolute; top: 20%; left: 26vw; font-size: 6vw;}
+  .content1 .title h1{
+    position: absolute; top: 17%;
+    font-size: 15vw;}
+
+
+    .works{ width: 100%;}
+
+    /* 재킷 */
+    .work1 img{width: 80vw; display: flex; flex-direction: column; justify-content: center; box-shadow: 0px 0px 2vw 0 #1573ca;}
+    .work1 img:nth-of-type(2){position: absolute; top: 160%; left: 10vw; box-shadow: 0px 0px 2vw 0 #1573ca;}
+    .work1 p{ font-size: 5vw; position: absolute; top: 64%; right: 10%;}
+    .work1 h2{transform: rotateX( 0deg );margin-top: 180%; left: 35%;
+    }
+
+    .work2{ display: flex; flex-direction: column; justify-content: center;}
+    .work2 img{width: 80vw; display: flex; flex-direction: column; justify-content: center;
+      margin-top: 70%;}
+
+    .work2 h2{transform: rotateX( 0deg );margin-top: 180%; left: 35%;
+      }
+    .work2 p{ width: 30%; font-size: 5vw; position: absolute; top: 253%; left: 70%; z-index: 100;}
+    
+
+    .work3{width: 80vw; height: 50vh;position: absolute; top: 50%;}  
+
+}

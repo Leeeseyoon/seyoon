@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About me</title>
+    <link rel="stylesheet" href="css/page3.css">
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+  /* 마우스 움직임 */
+          .target {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(255, 145, 145, 1);
+            border-radius: 50%;
+            z-index: 1000; 
+            pointer-events: none;
+        }
+        .target::before {
+            content: "";
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            border: 2px solid rgba(255, 145, 145, 1);
+            border-radius: 50%;
+        }
+        .tag {
+            color: rgb(224, 93, 93);
+            position: absolute;
+            font-size: 30px;
+            margin: 20px;
+            
+        }
+        
+
+
+/* 하단 버튼 */
+.moveTopBtn {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  width: 4rem;
+  height: 4rem;
+  background: #fc8dad; 
+  border-radius: 50%;
+  color: #fff;
+ }
+ .moveTopBtn h1{font-size: 2.5rem; margin-left: 19%;margin-top: 3%;}
+ .button-container {
+            position: relative;
+            z-index: 1;
+        }
+        .button-container button {
+            position: absolute;
+
+            font-size: 16px;
+        }
+/* 스크롤 매직 */
+    .back-to-position{
+      opacity: 0;
+      transition: 1s;
+    }
+    .back-to-position.to-right {
+        transform: translateX(-50px) ;
+      }
+      .back-to-position.to-left {
+        transform: translateX(50px) ;
+      }
+      .show .back-to-position {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      .show .back-to-position.delay-0 {
+        transition-delay: 0s;
+      }
+      .show .back-to-position.delay-1 {
+        transition-delay: .3s;
+      }
+</style>
+<body>
+
+    <div class="target"></div>
+    <span class="tag">hello</span>
+    <div class="wrap">
+          
+
+      
+        <div class="header">
+            <div class="logo"><a href="index.html">Lee Se Yoon</a></div>
+            <div class="menu">
+              <ul id="pc_menu">
+                <li><a href="page3.html">About me</a></li>
+                <li><a href="./page.html">Portfolio</a></li>
+                <li><a href="./page2.html">Contact</a></li>
+              </ul>
+      
+              <div class="mb_button">
+                <button id="menuButton"></button>
+                <div id="menumb" class="menumb">
+                  <button id="closeButton">X</button>
+                  
+                    <ul>
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="#">About Me</a></li>
+                        <li><a href="./page.html">Portfolio</a></li>
+                        <li><a href="./page2.html">Contact</a></li>
+                    </ul>
+                  
+                </div>
+                <script src="./js/mbscript.js"></script>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="content">
+            <div class="title">
+            <h1>Ab&nbsp;&nbsp;&nbsp;ut ME</h1>
+            <img class="rabbit" src="img/rabbitw.png" height="50px" width=40px" alt="">
+          </div>
+            <section class="sec1 scroll-spy">
+              
+              <div class="rightbox scroll-spy">
+                <div class="text boxs back to-position to-right delay-0">
+                  <img src="./img/text.png" alt="">
+                  <p>Developer WEB DESIGNER</p>
+                </div>
+                <div class="text boxs back to-position to-right delay-0">
+                  <img src="./img/text.png" alt="">
+                  <p class="pcat">I Like Cat</p>
+                </div>
+                <div class="text boxs back to-position to-right delay-0 ">
+                  <img src="./img/text.png" alt="">
+                  <p class="hcat">HappyHappycat</p>
+                </div>
+              </div>
+
+
+              <div class="p_box">
+                <div class="p_img">
+                    <img id="mainImage" src="./img/cat.png" alt="">
+                </div>
+                <div class="under">
+                    <button class="change_img"></button>
+                </div>
+            </div>
+
+
+              <div class="leftbox back-to-position to-left delay-0">
+                <div class="t_box ">
+                  <h1 class="box ">PROFILE</h1>
+                  <p>Name           이세윤 <br>
+                    Birth             2004.10.24 <br>
+                    Instargram  @sy____oon <br>
+                    Phone          010-2307-2410 <br>
+                    Mail              lsy200400@naver.com   </p>
+                  <h1>LICENSE</h1>
+                  <p>컴퓨터 그래픽스운용 기능사<br>
+                    GTQ 1급</p>
+                </div>
+              </div>
+
+              <div class="skills">
+                <h1>Skill</h1>
+                <img src="./img/photo.png" width="130px" height="130px" alt="">
+                <img src="./img/illustrator.png" width="130px" height="130px" alt="">
+                <img src="./img/indesign.png" width="130px" height="130px" alt="">
+                <img src="./img/Adobe_After_Effects_CC_icon.svg.png" width="130px" height="130px" alt="">
+                <img src="./img/figma.png" width="130px" height="130px" alt="">
+                <img src="./img/pngwing.com-(23).png" width="130px"" height="130px" alt="">
+                
+                <img src="./img/visual.png" width="130px" height="130px" alt="">
+                <img src="./img/colab.png" width="130px" height="130px" alt="">
+
+              </div>
+              
+            </section>
+
+
+            <section class="sec2 ">
+              <div class="se2box scroll-spy">
+                <div class="award box back-to-position to-right delay-0">
+                  <h1>AWARDS</h1>
+                  <p>2020 교내 포트폴리오 우수상 수상 <br>
+                    2023 ‘배움을 봉사하는 정수인 봉사동아리’ 동아리 은상 수상 <br>
+                    2023 ‘배움을 봉사하는 정수인 봉사동아리’ 동아리 장려상 수상</p>
+                </div>
+                <div class="education box back-to-position to-left delay-1">
+                  <h1>EDUCATION</h1>
+                  <p>안산 디자인 문화 고등학교 시각디자인과 졸업 <br>
+                    한국 폴리텍 대학 1 정수캠퍼스 시각디자인과 재학</p>
+                </div>
+                
+              </div>
+              <div class="imgbox"></div>
+              <p class="footer">ⓒ2024 by Seyoon Portfolio</p>
+            </section>
+            
+            
+            
+            
+
+          </div>
+          <div class="button-container">
+            <div class="moveTopBtn"><h1>&#129129;</h1></div>
+          </div>
+          
+    </div>
+    
+
+    <script>
+      document.querySelector('.change_img').addEventListener('click', function() {
+          const mainImage = document.getElementById('mainImage');
+          const currentSrc = mainImage.src;
+          const originalSrc = './img/cat.png';
+          const newSrc = './img/catcom.jpg';
+
+          if (currentSrc.includes('cat.png')) {
+              mainImage.src = newSrc;
+          } else {
+              mainImage.src = originalSrc;
+          }
+      });
+  </script>
+<script>
+  const $topBtn = document.querySelector(".moveTopBtn");
+
+// 버튼 클릭 시 맨 위로 이동
+$topBtn.onclick = () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });  
+}
+</script>
+
+
+
+
+
+    <!-- 마우스 움직임 -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script>
+      const aniDuration = 3;
+gsap.to('.boxs', {duration: aniDuration, x: 300, y: 50, rotation: 360, ease: 'elastic.out(1,0.3)', yoyo: true, repeat: 2});
+
+const target = document.querySelector('.target');
+let mouseX = 0;
+let mouseY = 0;
+
+const targetRect = target.getBoundingClientRect();
+const targetHalfWidth = targetRect.width / 2;
+const targetHalfHeight = targetRect.height / 2;
+
+function updateTargetPosition() {
+    const scrollX = window.scrollX || document.documentElement.scrollLeft;
+    const scrollY = window.scrollY || document.documentElement.scrollTop;
+    target.style.transform = `translate(${mouseX + scrollX - targetHalfWidth}px, ${mouseY + scrollY - targetHalfHeight}px)`;
+}
+
+document.addEventListener('mousemove', function(e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    updateTargetPosition();
+});
+
+window.addEventListener('scroll', function() {
+    updateTargetPosition();
+});
+
+window.addEventListener('load', function() {
+    updateTargetPosition();
+});
+
+
+</script>
+
+
+  <!-- 섹션 스크롤 매직 -->
+    <script>
+      const spyEls = document.querySelectorAll('.scroll-spy');
+      const controller = new ScrollMagic.Controller();
+
+      spyEls.forEach(function (spyEl) {
+        new ScrollMagic
+        .Scene({triggerElement: spyEl})
+        .setClassToggle(spyEl, 'show')
+        .addTo(controller)
+      })
+
+    </script>
+
+
+
+    <!-- 타이틀 페이드인 -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script>
+        const fadeEls = document.querySelectorAll('.title, .p_box, .skills');
+    gsap.from(fadeEls, {
+        transform: 'translateY(-3%)',
+      duration: 0.5,
+        opacity: 0,
+        stagger: 0.7
+    })
+    </script>
+</body>
+</html>

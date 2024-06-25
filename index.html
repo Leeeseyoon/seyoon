@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LSY</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/cursor.css">
+    <link rel="stylesheet" href="./css/font.css">
+</head>
+<style>
+    
+</style>
+
+<body>
+
+    
+    <div class="container" id="container">
+        <div class="screen" id="screen1">
+            <button id="startButton">
+                <div class="butbox">
+                    
+                    <div class="glitch-wrapper">
+                        <div class="glitch" data-text="Strat">Strat</div>
+                     </div>
+                    
+                    <img class="computer" src="img/computer.png" alt="">
+                </div>
+            </button>
+        </div>
+        
+
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+        <script>
+            const fadeEls = document.querySelectorAll('.butbox');
+        gsap.from(fadeEls, {
+            duration: 1,
+            transform: 'translateY(-10%)',
+            scale: .1,
+            opacity: 0,
+            stagger: 0.7
+        })
+        
+            
+        </script>
+        <div class="screen " id="screen2">
+            <h1 id="mainText"></h1>
+            <p id="subText"><span id="name"></span></p>
+
+                <img class="blinking" src="./img/scroll.png" width="7%" height="13%" alt="">
+                <img class="blinking"  src="./img/scrollarrowtodown_83796.png" width="3%" alt="">
+                <img class="blinking"  src="./img/scrollarrowtodown_83796.png" width="3%" alt="">
+                <img class="blinking"  src="./img/scrollarrowtodown_83796.png" width="3%" alt="">
+ 
+        </div>
+
+
+
+        <div class="screen" id="screen3">
+            <div class="hover_container">
+                <h1 class="about"><a href="page.html">Port<span>folio</span></a></h1>
+                <div class="limg"><img src="./img/lip1.jpg" alt=""></div>
+            </div>
+            <div class="hover_container">
+                <h1 class="about"><a href="page3.html">About ME</a></h1>
+                <div class="limg"><img src="./img/cat.png" alt=""></div>
+            </div>
+            <div class="hover_container">
+                <h1 class="about"><a href="page2.html">Contact</span></a></h1>
+                <div class="limg call"><img src="./img/catact.png"  alt=""></div>
+            </div>
+
+            
+            
+            
+            
+            </div>
+            <script></script>
+            <div class="screen4">
+                <link rel="stylesheet" href="/index2.html">
+            </div>
+        </div>
+    </div>
+    <div id="progressContainer">
+        <div id="progressBar"></div>
+        <div id="progressText">0%</div>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+</html>

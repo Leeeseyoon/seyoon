@@ -1,0 +1,39 @@
+/* 전체 페이지의 커서를 바꾸고 싶을 때 */
+body {
+    cursor: url(/img/4.cur), auto;  /* 예: 손 모양 커서 */
+}
+/* 
+/* /* 특정 요소에만 커서를 바꾸고 싶을 때 */
+button:hover {
+    cursor: url(/img/3.cur),auto; /* 예: 십자 모양 커서 */
+} 
+#screen3 h1 a:hover{cursor: url(/img/3.cur),auto;}
+
+/* 커서 이미지를 사용하고 싶을 때 */
+.custom-cursor {
+    cursor: url(/img/2.png), auto; /* 예: 커스텀 이미지 커서 */
+}
+
+
+.Cursor {
+    pointer-events: none;
+    position: fixed;
+    display: block;
+    border-radius: 0;
+    transform-origin: center center;
+    mix-blend-mode: difference;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    filter: url("#goo");
+  }
+  .Cursor span {
+    position: absolute;
+    display: block;
+    width: 26px;
+    height: 26px;
+    border-radius: 20px;
+    background-color: #fff;
+    transform-origin: center center;
+    transform: translate(-50%, -50%);
+  }

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protfolio</title>
+    <link rel="stylesheet" href="./css/page.css">
+    <!-- 스와이퍼 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- 스크롤 매직 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js" integrity="sha512-8E3KZoPoZCD+1dgfqhPbejQBnQfBXe8FuwL4z/c8sTrgeDMFEnoyTlH3obB4/fV+6Sg0a0XF+L/6xS4Xx1fUEg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- 중앙선 -->
+    <script src="./js/center.js" defer></script>
+    <style>
+
+        /* 마우스 움직임 */
+        .target {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgba(255, 145, 145, 1);
+            border-radius: 50%;
+            z-index: 1000; 
+            pointer-events: none;
+        }
+        .target::before {
+            content: "";
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            border: 2px solid rgba(255, 145, 145, 1);
+            border-radius: 50%;
+        }
+        .tag {
+            color: rgb(224, 93, 93);
+            position: absolute;
+            font-size: 30px;
+            margin: 20px;
+            
+        }
+        
+
+
+/* 하단 버튼 */
+.moveTopBtn {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  width: 4rem;
+  height: 4rem;
+  background: #fc8dad; 
+  border-radius: 50%;
+  color: #fff;
+ }
+ .moveTopBtn h1{font-size: 2.5rem; margin-top: 3%;}
+ .button-container {
+            position: relative;
+            z-index: 1;
+        }
+        .button-container button {
+            position: absolute;
+
+            font-size: 16px;
+        }
+
+
+
+        /* 스크롤매직 */
+
+      .back-to-position {
+      opacity: 0;
+      transition: 1s;
+      }
+      .back-to-rotate{
+        opacity: 0;
+      transition: 1s;
+      }
+      .back-to-rotate2{
+        opacity: 0;
+      transition: 1s;
+      }
+      .back-to-rotate2.to-left {
+        transform: translateX(150px) ;
+      }
+
+
+      .show .back-to-rotate2 {
+        opacity: 1;
+        transform: rotate(-90deg);
+      }
+
+      .show .back-to-rotate2.delay-1 {
+        transition-delay: .3s;
+      }
+
+
+
+
+      .back-to-rotate.to-left {
+        transform: translateX(150px) ;
+      }
+      .show .back-to-rotate {
+        opacity: 1;
+        transform: rotate(90deg);
+      }
+      .show .back-to-rotate.delay-1 {
+        transition-delay: .3s;
+      }
+
+.
+      .back-to-position.to-right {
+        transform: translateX(-150px) ;
+      }
+      .back-to-position.to-left {
+        transform: translateX(150px) ;
+      }
+      .show .back-to-position {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      .show .back-to-position.delay-0 {
+        transition-delay: 0s;
+      }
+      .show .back-to-position.delay-1 {
+        transition-delay: .3s;
+      }
+
+    </style>
+
+</head>
+<body>
+  <div class="target"></div>
+    <span class="tag">hello</span>
+    <div id="wrap">
+        <!-- 헤더 -->
+        <div class="header">
+          <div class="logo"><a href="index.html">Lee Se Yoon</a></div>
+          <div class="menu">
+            <ul id="pc_menu">
+              <li><a href="page3.html">About me</a></li>
+              <li><a href="#">Portfolio</a></li>
+              <li><a href="page2.html">Contact</a></li>
+            </ul>
+    
+            <div class="mb_button">
+              <button id="menuButton"></button>
+              <div id="menumb" class="menumb">
+                <button id="closeButton">X</button>
+                
+                  <ul>
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="page3.html">About Me</a></li>
+                      <li><a href="page.html">Portfolio</a></li>
+                      <li><a href="page2.html">Contact</a></li>
+                  </ul>
+                
+              </div>
+              <script src="./js/mbscript.js"></script>
+            </div>
+          </div>
+        </div>
+
+          <!-- 컨텐츠 -->
+        <div id="content">
+            <div class="content1">
+              <div class="title">
+                <h3>프로젝트 들여다보기</h3>
+                <h1>Portfolio Works</h1>
+                <img src="" alt=""><!-- 토끼 -->
+              </div>
+              
+              
+
+
+
+                <section class="works ">
+                  <section class="work1 scroll-spy" >
+                    
+                    <img src="./img/jacke1.jpg" alt="" class="box back-to-position to-right delay-0">
+                    <img src="./img/jacke2.jpg" alt="" class="box back-to-position to-left delay-1">
+                    <h2 class="box back-to-position to-left delay-1" >Jaket</h2>
+                    <p class="box back-to-position to-left delay-1">View More</p>
+                  </section>
+                  <section class="work2 scroll-spy" >
+                    <img src="./img/lip2.jpg" alt=""  class="box back-to-position to-right delay-0">
+                    <img src="./img/lip1.jpg" alt="" class="box back-to-position to-left delay-1">
+                    <h2 class="box back-to-rotate to-left delay-1">Oprea Lip Tint</h2>
+                    <p class="box back-to-position to-left delay-1">View More</p>
+                  </section>
+                  <section class="work3 scroll-spy" >
+                    <img src="./img/amuse1.jpg" alt="" class="box back-to-position to-right delay-0">
+                    <img src="./img/amuse2.jpg" alt="" class="box back-to-position to-left delay-1">
+                    <h2 class="box back-to-rotate2 to-left delay-1">AMUS Web site</h2>
+                    <p class="box back-to-position to-left delay-1">View More</p>
+                  </section>
+              </section>
+            </div>
+
+
+
+            
+
+            
+            <div id="central-line"></div>
+              
+        </div>
+
+        
+    </div>
+    <div id="content2">
+
+      <div class="swiper mySwiper" >
+        
+        
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <div class="cat"><img src="./img/cat1.jpg" alt=""></div>
+              <div class="detail"><h4>♥ Sunglasses CAT</h4></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="cat"><img src="./img/cat2.jpg" alt=""></div>
+              <div class="detail"><h4>♥ Sunglasses CAT</h4></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="cat"><img src="./img/cat3.jpg" alt=""></div>
+              <div class="detail"><h4>Sunglasses CAT</h4></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="cat"><img src="./img/cat4.jpg" width="564px" height="564px" alt=""></div>
+              <div class="detail"><h4>New Jeans</h4></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="cat"><img src="./img/cat5.jpg" alt=""></div>
+              <div class="detail"><h4>Retro Video</h4></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="cat"><img src="./img/cat6.jpg" alt=""></div>
+              <div class="detail"><h4>Retro Tape</h4></div>
+            </div>
+            <div class="swiper-slide">
+              <div class="cat"><img src="./img/cat7.jpg" alt=""></div>
+              <div class="detail"><h4>Retro Computer</h4></div>
+            </div>
+
+            ...
+          </div>
+          <!-- If we need pagination -->
+          <!-- <div class="swiper-pagination"></div> -->
+        
+          <!-- If we need navigation buttons -->
+          <!-- <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div> -->
+        
+          <!-- If we need scrollbar -->
+          <!-- <div class="swiper-scrollbar"></div> -->
+        
+
+      </div>
+      <div class="button-container">
+            <div class="moveTopBtn"><h1>&#129129;</h1></div>
+          </div>
+    </div>
+    <div class="button-container">
+      <div class="moveTopBtn"><h1>&#129129;</h1></div>
+    </div>
+
+
+
+    <script>
+      const $topBtn = document.querySelector(".moveTopBtn");
+    
+    // 버튼 클릭 시 맨 위로 이동
+    $topBtn.onclick = () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });  
+    }
+    </script>
+    
+
+    <!-- 마우스 움직임 -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script>
+      const aniDuration = 3;
+gsap.to('.boxs', {duration: aniDuration, x: 300, y: 50, rotation: 360, ease: 'elastic.out(1,0.3)', yoyo: true, repeat: 2});
+
+const target = document.querySelector('.target');
+let mouseX = 0;
+let mouseY = 0;
+
+const targetRect = target.getBoundingClientRect();
+const targetHalfWidth = targetRect.width / 2;
+const targetHalfHeight = targetRect.height / 2;
+
+function updateTargetPosition() {
+    const scrollX = window.scrollX || document.documentElement.scrollLeft;
+    const scrollY = window.scrollY || document.documentElement.scrollTop;
+    target.style.transform = `translate(${mouseX + scrollX - targetHalfWidth}px, ${mouseY + scrollY - targetHalfHeight}px)`;
+}
+
+document.addEventListener('mousemove', function(e) {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    updateTargetPosition();
+});
+
+window.addEventListener('scroll', function() {
+    updateTargetPosition();
+});
+
+window.addEventListener('load', function() {
+    updateTargetPosition();
+});
+
+
+</script>
+
+
+    <script><!-- 섹션 스크롤 매직 -->
+      const spyEls = document.querySelectorAll('.scroll-spy');
+      const controller = new ScrollMagic.Controller();
+
+      spyEls.forEach(function (spyEl) {
+        new ScrollMagic
+        .Scene({triggerElement: spyEl})
+        .setClassToggle(spyEl, 'show')
+        .addTo(controller)
+      })
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js">
+
+    </script><!-- 페이드인 -->  
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/EasePack.min.js"></script><!-- 페이드인 -->  
+    
+    <script><!-- 타이틀 페이드인 -->
+        const fadeEls = document.querySelectorAll('.title');
+    gsap.from(fadeEls, {
+      transform: 'translateY(-20%)',
+
+        opacity: 0,
+        stagger: 0.7
+    })
+    </script>
+
+
+
+
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+      rotate: 360,
+      stretch: 0,
+      depth: 300,
+      modifier: 1,
+      slideShadows: true,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+    },
+    speed: 800, // 슬라이드 전환 속도 (밀리초 단위)
+    loop: true, // 슬라이드 루프 모드
+    autoplay: {
+      delay: 1000, // 자동 전환 간격 (밀리초 단위)
+      disableOnInteraction: false, // 사용자가 슬라이드를 터치하거나 드래그해도 autoplay를 멈추지 않음
+    },
+  });
+</script>
+
+
+
+
+
+
+</body>
+</html>
